@@ -1,9 +1,8 @@
 var express = require('express');
 var app = express();
-var http = require('http')
 
 app.get('/', function (req, res) {
-  res.send('Hey VandyHacks!');
+  res.send('Hello Vandy!');
 });
 
 app.get('/user', function (req, res) {
@@ -11,7 +10,9 @@ app.get('/user', function (req, res) {
 });
 
 var port = process.env.PORT || 8080;
-http.createServer(function(req, res) {
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('Hello World\n');
-}).listen(port);
+var server = app.listen(port, function () {
+  var host = server.address().address;
+  var port = server.address().port;
+
+  console.log('Example app listening at http://%s:%s', host, port);
+});
