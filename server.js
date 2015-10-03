@@ -18,6 +18,11 @@ app.get('/', function (req, res) {
   res.send('Hello Vandy!');
 });
 
+//Return JSON of all users
+app.get('/allusers', function(req,res) {
+    res.send(friends)
+});
+
 // Handle GET to fetch user information
 app.get('/user/:username', function(req, res) {
     if (friends[req.params.username] != undefined){
