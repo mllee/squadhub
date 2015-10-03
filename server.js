@@ -5,6 +5,7 @@ var _ = require("underscore");
 
 var friends = {
     "matt":"free",
+    "chris":"sorta",
     "jason":"busy"
 }
 
