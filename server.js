@@ -30,9 +30,17 @@ app.get('/user/:username', function(req, res) {
     }
 });
 
-app.post('/user', function(req, res) {
-    var name = req.body.name,
-        availability = req.body.availability;
+app.post('/user/:username/:status', function(req, res) {
+    if (friends[req.params.username] != undefined){
+        console.log("user found")
+        friends[req.params.username] = req.params.status
+        res.sendStatus(200)
+    }
+    else {
+        console.log("not found, will create")
+        friends[req.params.username] = req.params.status
+        res.sendStatus(201)
+    }
 });
 
 var port = process.env.PORT || 8080;
