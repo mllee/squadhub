@@ -4,10 +4,12 @@ var fs = require('fs');
 var _ = require("underscore");
 
 var friends = {
-    "matt":"free",
-    "chris":"sorta",
-    "erica":"free",
-    "jason":"busy"
+    "matt" : {
+        "status":"free"
+    },
+    "jason" : {
+        "status":"free"
+    }
 }
 
 //fs.writeFile( "friends_list.json", JSON.stringify( friends ), "utf8"); //callback is optional 4th param
@@ -37,6 +39,7 @@ app.get('/user/:username', function(req, res) {
     }
 });
 
+//not being used
 app.post('/user/:username/:status', function(req, res) {
     if (friends[req.params.username] != undefined){
         console.log("user found")
@@ -53,12 +56,15 @@ app.post('/user/:username/:status', function(req, res) {
 app.get('/user/:username/:status', function(req, res) {
     if (friends[req.params.username] != undefined){
         console.log("user found")
-        friends[req.params.username] = req.params.status
+        friends[req.params.username]["status"]= req.params.status
         res.sendStatus(200)
     }
     else {
         console.log("not found, will create")
-        friends[req.params.username] = req.params.status
+        friends[req.params.username] = {
+            "status" : "free" //default
+        }
+        friends[req.params.username]["status"] = req.params.status
         res.sendStatus(201)
     }
 });
