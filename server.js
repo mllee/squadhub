@@ -11,8 +11,8 @@ var friends = {
     },
     "Jason" : {
         "status":"free",
-        "lat":0,
-        "lon":0
+        "lat":2,
+        "lon":2
     }
 }
 
