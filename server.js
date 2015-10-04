@@ -15,13 +15,18 @@ var friends = {
         "lon":-86.81
     },
     "Erica" : {
-        "status":"sorta",
+        "status":"free",
         "lat":36.14,
         "lon":-86.81
 
     },
     "Michael": {
         "status":"busy",
+        "lat":36.14,
+        "lon":-86.81
+    },
+    "Jasmine": {
+        "status":"free",
         "lat":36.14,
         "lon":-86.81
     },
