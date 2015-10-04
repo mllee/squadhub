@@ -6,9 +6,20 @@ var _ = require("underscore");
 var friends = {
     "Matt" : {
         "status":"free",
-        "lat":0,
-        "lon":0
+        "lat":36.15,
+        "lon":-86.80
     },
+    "Danny" : {
+        "status":"free",
+        "lat":36.15,
+        "lon":-86.80
+    },
+    "Mitchell": {
+        "status":"busy",
+        "lat":36.15,
+        "lon":-86.80
+    },
+
     "Jason" : {
         "status":"free",
         "lat":1,
