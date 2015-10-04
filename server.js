@@ -11,8 +11,8 @@ var friends = {
     },
     "Jason" : {
         "status":"free",
-        "lat":2,
-        "lon":2
+        "lat":1,
+        "lon":1
     }
 }
 
@@ -20,7 +20,6 @@ var friends = {
 
 // And then, to read it...
 //myJson = require("./filename.json");
-
 
 app.get('/', function (req, res) {
   res.send('Hello Vandy!');
