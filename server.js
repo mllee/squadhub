@@ -14,6 +14,12 @@ var friends = {
         "lat":36.15,
         "lon":-86.80
     },
+    "Erica" : {
+        "status":"sorta",
+        "lat":36.15,
+        "lon":-86.80
+
+    },
     "Mitchell": {
         "status":"busy",
         "lat":36.15,
@@ -40,6 +46,39 @@ app.get('/', function (req, res) {
 app.get('/allusers', function(req,res) {
     res.send(friends)
 });
+
+app.delete('/allusers', function(req, res) {
+    friends =  {
+        "Matt" : {
+            "status":"free",
+            "lat":36.15,
+            "lon":-86.80
+        },
+        "Danny" : {
+            "status":"free",
+            "lat":36.15,
+            "lon":-86.80
+        },
+        "Erica" : {
+            "status":"sorta",
+            "lat":36.15,
+            "lon":-86.80
+
+        },
+        "Mitchell": {
+            "status":"busy",
+            "lat":36.15,
+            "lon":-86.80
+        },
+        "Jason" : {
+            "status":"free",
+            "lat":1,
+            "lon":1
+        }
+    }
+
+    res.sendStatus(204);
+})
 
 // Handle GET to fetch user information
 app.get('/user/:username', function(req, res) {
