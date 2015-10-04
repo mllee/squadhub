@@ -6,35 +6,35 @@ var _ = require("underscore");
 var friends = {
     "Jerry" : {
         "status":"free",
-        "lat":36.14,
-        "lon":-86.81
+        "lat":36.15,
+        "lon":-86.80
     },
     "Chris" : {
         "status":"free",
-        "lat":36.14,
-        "lon":-86.81
+        "lat":36.15,
+        "lon":-86.80
     },
     "Erica" : {
         "status":"free",
-        "lat":36.14,
-        "lon":-86.81
+        "lat":36.15,
+        "lon":-86.80
 
     },
     "Michael": {
         "status":"busy",
-        "lat":36.14,
-        "lon":-86.81
+        "lat":36.15,
+        "lon":-86.80
     },
     "Jasmine": {
         "status":"free",
-        "lat":36.14,
-        "lon":-86.81
+        "lat":36.15,
+        "lon":-86.80
     },
 
     "Jason" : {
         "status":"free",
-        "lat":36.14,
-        "lon":86.81
+        "lat":36.15,
+        "lon":86.80
     }
 }
 
