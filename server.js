@@ -62,7 +62,8 @@ app.get('/user/:username/:status/', function(req, res) {
     }
 });
 
-app.get('/user/:username/:status/:lat/:long', function(req, res) {
+app.get('/user/:username/:status/:lat/:lon', function(req, res) {
+
     if (friends[req.params.username] != undefined){
         console.log("user found")
         friends[req.params.username]["status"]= req.params.status
