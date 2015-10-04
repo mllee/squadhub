@@ -39,7 +39,7 @@ app.get('/user/:username', function(req, res) {
     }
 });
 
-//not being used
+// Not being used
 app.post('/user/:username/:status', function(req, res) {
     if (friends[req.params.username] != undefined){
         console.log("user found")
@@ -53,6 +53,7 @@ app.post('/user/:username/:status', function(req, res) {
     }
 });
 
+//Makeshift Post
 app.get('/user/:username/:status', function(req, res) {
     if (friends[req.params.username] != undefined){
         console.log("user found")
