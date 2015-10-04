@@ -73,7 +73,7 @@ app.get('/user/:username/:status/:lat/:long', function(req, res) {
     else {
         console.log("not found, will create")
         friends[req.params.username] = {
-            "status" : "free" //defaults
+            "status" : "free", //defaults
             "lat":0,
             "lon":0
         }
