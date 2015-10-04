@@ -4,11 +4,15 @@ var fs = require('fs');
 var _ = require("underscore");
 
 var friends = {
-    "matt" : {
-        "status":"free"
+    "Matt" : {
+        "status":"free",
+        "lat":0,
+        "lon":0
     },
-    "jason" : {
-        "status":"free"
+    "Jason" : {
+        "status":"free",
+        "lat":0,
+        "lon":0
     }
 }
 
@@ -39,22 +43,8 @@ app.get('/user/:username', function(req, res) {
     }
 });
 
-// Not being used
-app.post('/user/:username/:status', function(req, res) {
-    if (friends[req.params.username] != undefined){
-        console.log("user found")
-        friends[req.params.username] = req.params.status
-        res.sendStatus(200)
-    }
-    else {
-        console.log("not found, will create")
-        friends[req.params.username] = req.params.status
-        res.sendStatus(201)
-    }
-});
-
 //Makeshift Post
-app.get('/user/:username/:status', function(req, res) {
+app.get('/user/:username/:status/', function(req, res) {
     if (friends[req.params.username] != undefined){
         console.log("user found")
         friends[req.params.username]["status"]= req.params.status
@@ -63,9 +53,33 @@ app.get('/user/:username/:status', function(req, res) {
     else {
         console.log("not found, will create")
         friends[req.params.username] = {
-            "status" : "free" //default
+            "status" : "free", //defaults
+            "lat":0,
+            "lon":0
         }
         friends[req.params.username]["status"] = req.params.status
+        res.sendStatus(201)
+    }
+});
+
+app.get('/user/:username/:status/:lat/:long', function(req, res) {
+    if (friends[req.params.username] != undefined){
+        console.log("user found")
+        friends[req.params.username]["status"]= req.params.status
+        friends[req.params.username]["lat"]= req.params.lat
+        friends[req.params.username]["lon"]= req.params.lon
+        res.sendStatus(200)
+    }
+    else {
+        console.log("not found, will create")
+        friends[req.params.username] = {
+            "status" : "free" //defaults
+            "lat":0,
+            "lon":0
+        }
+        friends[req.params.username]["status"] = req.params.status
+        friends[req.params.username]["lat"]= req.params.lat
+        friends[req.params.username]["lon"]= req.params.lon
         res.sendStatus(201)
     }
 });
