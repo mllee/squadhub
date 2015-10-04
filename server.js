@@ -4,12 +4,12 @@ var fs = require('fs');
 var _ = require("underscore");
 
 var friends = {
-    "Matt" : {
+    "Jerry" : {
         "status":"free",
         "lat":36.15,
         "lon":-86.80
     },
-    "Danny" : {
+    "Chris" : {
         "status":"free",
         "lat":36.15,
         "lon":-86.80
@@ -20,7 +20,7 @@ var friends = {
         "lon":-86.80
 
     },
-    "Mitchell": {
+    "Michael": {
         "status":"busy",
         "lat":36.15,
         "lon":-86.80
